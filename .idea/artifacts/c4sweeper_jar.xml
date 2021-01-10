@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="c4sweeper:jar">
+    <output-path>$PROJECT_DIR$/../../../c4sweeper_jar</output-path>
+    <root id="archive" name="c4sweeper.jar">
+      <element id="module-output" name="c4sweeper" />
+    </root>
+  </artifact>
+</component>
