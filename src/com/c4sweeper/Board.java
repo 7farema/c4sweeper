@@ -59,7 +59,7 @@ public class Board extends JPanel {
 
         for (int i = 0; i < NUM_IMAGES; i++) {
 
-            var path = "src/Resources/" + i + ".png";
+            var path = "./src/Resources/" + i + ".png";
             img[i] = (new ImageIcon(path)).getImage();
         }
 
