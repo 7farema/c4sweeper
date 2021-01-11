@@ -39,7 +39,6 @@ public class Board extends JPanel {
     private boolean inGame;
     private int minesLeft;
     private Image[] img;
-    private URL[] img2;
 
     private int allCells;
     private final JLabel statusbar;
@@ -55,12 +54,12 @@ public class Board extends JPanel {
         setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
 
         img = new Image[NUM_IMAGES];
-        img2 = new URL[NUM_IMAGES];
 
         for (int i = 0; i < NUM_IMAGES; i++) {
 
             var path = "./src/Resources/" + i + ".png";
             img[i] = (new ImageIcon(path)).getImage();
+//            img[i] = getClass().getResourceAsStream(path);
         }
 
         addMouseListener(new MinesAdapter());
