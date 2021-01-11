@@ -7,6 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.Random;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -53,20 +54,39 @@ public class Board extends JPanel {
 
         setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
 
-        img = new Image[NUM_IMAGES];
 
-        for (int i = 0; i < NUM_IMAGES; i++) {
-
-            var path = "./src/Resources/" + i + ".png";
-            img[i] = (new ImageIcon(path)).getImage();
-//            img[i] = getClass().getResourceAsStream(path);
-        }
+//
+//        for (int i = 0; i < NUM_IMAGES; i++) {
+//
+//            var path = "./src/Resources/" + i + ".png";
+//            img[i] = (new ImageIcon(path)).getImage();
+////            img[i] = getClass().getResourceAsStream(path);
+//        }
 
         addMouseListener(new MinesAdapter());
         newGame();
     }
 
     private void newGame() {
+
+        img = new Image[NUM_IMAGES];
+
+        try {
+            img[1] = ImageIO.read(getClass().getResource("./src/Resources/1.png"));
+            img[2] = ImageIO.read(getClass().getResource("./src/Resources/2.png"));
+            img[3] = ImageIO.read(getClass().getResource("./src/Resources/3.png"));
+            img[4] = ImageIO.read(getClass().getResource("./src/Resources/4.png"));
+            img[5] = ImageIO.read(getClass().getResource("./src/Resources/5.png"));
+            img[6] = ImageIO.read(getClass().getResource("./src/Resources/6.png"));
+            img[7] = ImageIO.read(getClass().getResource("./src/Resources/7.png"));
+            img[8] = ImageIO.read(getClass().getResource("./src/Resources/8.png"));
+            img[9] = ImageIO.read(getClass().getResource("./src/Resources/9.png"));
+            img[10] = ImageIO.read(getClass().getResource("./src/Resources/10.png"));
+            img[11] = ImageIO.read(getClass().getResource("./src/Resources/11.png"));
+            img[12] = ImageIO.read(getClass().getResource("./src/Resources/12.png"));
+        }
+        catch (Exception e){
+        }
 
         int cell;
 
